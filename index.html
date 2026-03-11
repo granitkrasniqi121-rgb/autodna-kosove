@@ -4,8 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>autoDNA Kosovë</title>
-  <meta name="description" content="Kontrollo historinë e veturës me VIN para blerjes. Zbulo aksidentet, kilometrazhin dhe historinë e importit." />
-
+  <meta name="description" content="Kontrollo historinë e veturës para blerjes. Hap AutoDNA nga një faqe e pastër dhe profesionale në shqip." />
   <style>
     * { box-sizing: border-box; }
 
@@ -191,28 +190,13 @@
       border: 1px solid #bfdbfe;
     }
 
-    .vin-search {
+    .start-box {
       display: flex;
       gap: 12px;
       margin-top: 8px;
     }
 
-    .vin-search input {
-      flex: 1;
-      padding: 18px;
-      font-size: 16px;
-      border-radius: 16px;
-      border: 1px solid #cbd5e1;
-      background: #f8fafc;
-      outline: none;
-    }
-
-    .vin-search input:focus {
-      border-color: #2563eb;
-      background: #fff;
-    }
-
-    .vin-search button {
+    .start-button {
       border: none;
       background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%);
       color: white;
@@ -222,9 +206,10 @@
       font-weight: 800;
       cursor: pointer;
       box-shadow: 0 12px 30px rgba(37, 99, 235, 0.28);
+      width: 100%;
     }
 
-    .vin-search button:hover {
+    .start-button:hover {
       filter: brightness(0.97);
     }
 
@@ -456,6 +441,103 @@
       color: #cbd5e1;
     }
 
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.65);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 1000;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal {
+      width: 100%;
+      max-width: 520px;
+      background: #fff;
+      border-radius: 28px;
+      padding: 26px;
+      box-shadow: 0 30px 80px rgba(15, 23, 42, 0.28);
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      border: none;
+      background: #f1f5f9;
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      font-size: 18px;
+      cursor: pointer;
+      color: #334155;
+    }
+
+    .modal h3 {
+      margin: 0 0 10px;
+      font-size: 28px;
+      letter-spacing: -0.5px;
+    }
+
+    .modal p {
+      margin: 0;
+      color: #475569;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    .modal-box {
+      margin-top: 18px;
+      background: #f8fbff;
+      border: 1px solid #dbeafe;
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .modal-steps {
+      margin: 14px 0 0;
+      padding-left: 18px;
+      color: #334155;
+      line-height: 1.9;
+      font-size: 14px;
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .btn-secondary {
+      flex: 1;
+      border: 1px solid #cbd5e1;
+      background: #fff;
+      color: #334155;
+      padding: 14px 16px;
+      border-radius: 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      flex: 1;
+      border: none;
+      background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%);
+      color: #fff;
+      padding: 14px 16px;
+      border-radius: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.25);
+    }
+
     @media (max-width: 980px) {
       .hero-wrap { grid-template-columns: 1fr; }
       .guides, .feature-row, .risk-grid { grid-template-columns: 1fr; }
@@ -465,7 +547,7 @@
       .topbar { display: none; }
       nav { display: none; }
       h1 { font-size: 38px; }
-      .vin-search, .footer-wrap, .report-header { flex-direction: column; align-items: stretch; }
+      .footer-wrap, .report-header, .modal-actions { flex-direction: column; align-items: stretch; }
       .stats, .guides { grid-template-columns: 1fr; }
     }
   </style>
@@ -498,8 +580,8 @@
     <div class="hero-wrap">
       <div>
         <div class="badge">Për vetura të importuara nga Evropa</div>
-        <h1>Kontrollo historinë e veturës me VIN para se ta blesh.</h1>
-        <p>Zbulo aksidentet, kilometrazhin e dyshimtë dhe historinë e importit. Dizajnuar për blerës në Kosovë që duan më shumë siguri para pagesës.</p>
+        <h1>Kontrollo historinë e veturës para se ta blesh.</h1>
+        <p>Një faqe më e pastër dhe më profesionale për përdoruesit në Kosovë. Nis kontrollin dhe vazhdo te AutoDNA për raportin e plotë.</p>
 
         <div class="trust-row">
           <div class="trust-pill">30+ databaza kontrolli</div>
@@ -510,17 +592,16 @@
 
         <div class="search-card">
           <div class="search-head">
-            <strong>Shkruani numrin VIN</strong>
-            <span class="search-tag">17 karaktere</span>
+            <strong>Fillo kontrollin e historisë</strong>
+            <span class="search-tag">Proces i thjeshtë</span>
           </div>
 
-          <div class="vin-search">
-            <input id="vin" type="text" maxlength="17" placeholder="Shkruani numrin VIN (17 karaktere)" />
-            <button id="checkBtn" type="button">Shiko raportin</button>
+          <div class="start-box">
+            <button id="openModalBtn" class="start-button" type="button">Shiko raportin</button>
           </div>
 
           <p class="vin-help">
-            VIN do të kopjohet automatikisht dhe do të hapet AutoDNA. Pastaj vetëm ngjiteni atje.
+            AutoDNA do të hapet në një dritare të re. Pastaj mund ta vendosni VIN-in direkt atje.
           </p>
 
           <div class="feature-row">
@@ -549,7 +630,7 @@
           <div>
             <div class="report-kicker">Shembull raporti</div>
             <h2 class="report-title">Shembull Raporti</h2>
-            <div class="vin-help" style="margin-top:8px;">Të dhëna të gjetura për këtë VIN</div>
+            <div class="vin-help" style="margin-top:8px;">Të dhëna që mund të gjenden në raport</div>
           </div>
           <div class="status">Raport i disponueshëm</div>
         </div>
@@ -586,7 +667,7 @@
   <section class="section">
     <h2>Udhëzues të dobishëm</h2>
     <p class="lead">
-      Për ta bërë faqen më të ngjashme me një platformë reale automobilistike, kemi mbajtur një seksion me guida informative që lidhen me kontrollin e historisë së veturës.
+      Këto faqe ndihmojnë përdoruesit të kuptojnë procesin para se të vazhdojnë te kontrolli i plotë.
     </p>
 
     <div class="guides">
@@ -620,30 +701,55 @@
     </div>
   </footer>
 
+  <div id="modalOverlay" class="modal-overlay">
+    <div class="modal">
+      <button id="closeModalBtn" class="modal-close" type="button">&times;</button>
+      <h3>Vazhdo te AutoDNA</h3>
+      <p>Raporti i plotë do të hapet në faqen zyrtare të AutoDNA. Aty mund ta shkruani VIN-in dhe të vazhdoni me kontrollin.</p>
+
+      <div class="modal-box">
+        <strong style="display:block; margin-bottom:8px;">Si funksionon:</strong>
+        <ol class="modal-steps">
+          <li>Klikoni butonin më poshtë</li>
+          <li>AutoDNA hapet në një dritare të re</li>
+          <li>Shkruani VIN-in direkt atje</li>
+          <li>Shikoni raportin e veturës</li>
+        </ol>
+      </div>
+
+      <div class="modal-actions">
+        <button id="cancelModalBtn" class="btn-secondary" type="button">Mbylle</button>
+        <button id="continueBtn" class="btn-primary" type="button">Vazhdo te AutoDNA</button>
+      </div>
+    </div>
+  </div>
+
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const button = document.getElementById("checkBtn");
-      const input = document.getElementById("vin");
+    const modalOverlay = document.getElementById("modalOverlay");
+    const openModalBtn = document.getElementById("openModalBtn");
+    const closeModalBtn = document.getElementById("closeModalBtn");
+    const cancelModalBtn = document.getElementById("cancelModalBtn");
+    const continueBtn = document.getElementById("continueBtn");
 
-      if (!button || !input) return;
+    function openModal() {
+      modalOverlay.classList.add("active");
+    }
 
-      button.onclick = async function () {
-        const vin = input.value.trim().toUpperCase();
+    function closeModal() {
+      modalOverlay.classList.remove("active");
+    }
 
-        if (!vin) {
-          alert("Ju lutem shkruani VIN.");
-          return;
-        }
+    openModalBtn.addEventListener("click", openModal);
+    closeModalBtn.addEventListener("click", closeModal);
+    cancelModalBtn.addEventListener("click", closeModal);
 
-        try {
-          await navigator.clipboard.writeText(vin);
-          alert("VIN u kopjua. AutoDNA do të hapet tani — ngjiteni VIN-in atje.");
-        } catch (e) {
-          alert("Nuk u kopjua automatikisht. Ju lutem kopjojeni VIN-in manualisht.");
-        }
+    modalOverlay.addEventListener("click", function(e) {
+      if (e.target === modalOverlay) closeModal();
+    });
 
-        window.open("https://www.autodna.com/?utm_source=affiliate", "_blank");
-      };
+    continueBtn.addEventListener("click", function() {
+      window.open("https://www.autodna.com/?utm_source=affiliate", "_blank");
+      closeModal();
     });
   </script>
 
