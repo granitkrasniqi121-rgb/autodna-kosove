@@ -1,33 +1,114 @@
 <!DOCTYPE html>
 <html lang="sq">
 <head>
-<meta charset="UTF-8">
-<title>Kontrollo kilometrazhin</title>
-<style>
-body{font-family:Arial;max-width:800px;margin:auto;padding:40px;background:#f8fafc}
-a{color:#2563eb}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Si ta kontrollosh kilometrazhin | autoDNA Kosovë</title>
+  <meta name="description" content="Mëso si ta kontrollosh kilometrazhin e veturës para blerjes në Kosovë." />
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; background: #f5f7fb; color: #0f172a; }
+    a { text-decoration: none; }
+    .topbar { background: #0f172a; color: #fff; font-size: 13px; padding: 8px 20px; }
+    .topbar-wrap { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; gap: 20px; }
+    header { background: #fff; border-bottom: 1px solid #e5e7eb; }
+    .header-wrap { max-width: 1100px; margin: 0 auto; padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .logo { display: flex; flex-direction: column; line-height: 1; }
+    .logo-main { font-size: 30px; font-weight: 800; letter-spacing: -.5px; }
+    .logo-main .auto { font-style: italic; color: #111827; }
+    .logo-main .dna { color: #1d4ed8; }
+    .logo-sub { margin-top: 3px; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #64748b; font-weight: 700; }
+    nav { display: flex; gap: 20px; }
+    nav a { color: #475569; font-size: 14px; font-weight: 600; }
+    .hero { background: linear-gradient(180deg,#ffffff 0%,#eef4ff 100%); border-bottom: 1px solid #dbeafe; }
+    .hero-wrap { max-width: 1100px; margin: 0 auto; padding: 50px 20px; }
+    .badge { display: inline-block; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 700; margin-bottom: 16px; }
+    h1 { margin: 0 0 14px; font-size: 46px; line-height: 1.08; letter-spacing: -1px; }
+    .lead { font-size: 18px; line-height: 1.75; color: #475569; max-width: 760px; }
+    .content { max-width: 1100px; margin: 0 auto; padding: 50px 20px; }
+    .layout { display: grid; grid-template-columns: 1.1fr .9fr; gap: 24px; }
+    .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 24px; padding: 24px; box-shadow: 0 10px 30px rgba(15,23,42,.05); }
+    .card h2 { margin: 0 0 12px; font-size: 28px; }
+    .card p { color: #475569; line-height: 1.75; }
+    .tip { background: #fff7ed; border: 1px solid #fdba74; color: #9a3412; border-radius: 18px; padding: 16px; margin-top: 16px; line-height: 1.7; }
+    .cta { margin-top: 20px; display: inline-block; background: linear-gradient(180deg,#2563eb 0%,#1d4ed8 100%); color: #fff; padding: 14px 18px; border-radius: 14px; font-weight: 800; }
+    .checklist { margin: 0; padding-left: 18px; color: #334155; line-height: 1.9; }
+    footer { background: #0f172a; color: #fff; margin-top: 20px; }
+    .footer-wrap { max-width: 1100px; margin: 0 auto; padding: 24px 20px; display: flex; justify-content: space-between; gap: 20px; align-items: center; }
+    .footer-logo { font-size: 24px; font-weight: 800; }
+    .footer-logo .auto { font-style: italic; color: #fff; }
+    .footer-logo .dna { color: #60a5fa; }
+    .footer-copy { font-size: 14px; color: #cbd5e1; }
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; }
+      nav { display: none; }
+      h1 { font-size: 36px; }
+      .topbar { display: none; }
+      .footer-wrap { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
 </head>
-
 <body>
+  <div class="topbar">
+    <div class="topbar-wrap">
+      <small>Kontroll i historisë së veturës për tregun e Kosovës</small>
+      <small>VIN • Aksidente • Kilometrazh • Import</small>
+    </div>
+  </div>
 
-<a href="index.html">← Kthehu në ballinë</a>
+  <header>
+    <div class="header-wrap">
+      <a class="logo" href="index.html">
+        <span class="logo-main"><span class="auto">auto</span><span class="dna">DNA</span></span>
+        <span class="logo-sub">Kosovë</span>
+      </a>
+      <nav>
+        <a href="index.html">Ballina</a>
+        <a href="kontrollo-vin.html">Kontrollo VIN</a>
+        <a href="vin-check-kosove.html">VIN Check Kosovë</a>
+      </nav>
+    </div>
+  </header>
 
-<h1>Si ta kontrollosh kilometrazhin</h1>
+  <section class="hero">
+    <div class="hero-wrap">
+      <div class="badge">Udhëzues për kilometrazhin</div>
+      <h1>Si ta kontrollosh kilometrazhin e veturës.</h1>
+      <p class="lead">Kilometrazhi i kthyer është një nga problemet më të zakonshme në tregun e veturave të përdorura. Prandaj është shumë e rëndësishme të bësh verifikim para blerjes.</p>
+    </div>
+  </section>
 
-<p>
+  <section class="content">
+    <div class="layout">
+      <div class="card">
+        <h2>Pse duhet ta kontrollosh?</h2>
+        <p>Nëse kilometrazhi është ulur artificialisht, blerësi mund të paguajë më shumë se sa vlen realisht vetura. Për më tepër, mund të krijohet një ide e gabuar për konsumimin real të saj.</p>
+        <p>Një raport historie mund të ndihmojë të zbulosh lexime të ndryshme të kilometrazhit në periudha të caktuara dhe të identifikosh mospërputhje të mundshme.</p>
+        <div class="tip">Nëse vetura duket “shumë e mirë” për moshën e saj, kjo është arsye shtesë për ta kontrolluar historinë para pagesës.</div>
+        <a class="cta" href="index.html">Kontrollo veturën tani</a>
+      </div>
 
-Kilometrazhi i kthyer është shumë i zakonshëm në tregun e veturave të përdorura.
+      <div class="card">
+        <h2>Shenja që duhen parë</h2>
+        <ul class="checklist">
+          <li>Konsumim i madh i timonit ose ulëseve</li>
+          <li>Pedale të shpenzuara shumë</li>
+          <li>Mospërputhje mes gjendjes dhe kilometrave</li>
+          <li>Histori servisi e paplotë</li>
+          <li>Shitës që shmang pyetjet për historinë</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-</p>
-
-<p>
-
-Një raport historie mund të tregojë nëse kilometrazhi është ndryshuar.
-
-</p>
-
-<a href="index.html">Kontrollo veturën</a>
-
+  <footer>
+    <div class="footer-wrap">
+      <div>
+        <div class="footer-logo"><span class="auto">auto</span><span class="dna">DNA</span> Kosovë</div>
+        <div class="footer-copy">Kontrollo historinë e veturës para blerjes</div>
+      </div>
+      <div class="footer-copy">© 2026 autoDNA Kosovë</div>
+    </div>
+  </footer>
 </body>
 </html>
