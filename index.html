@@ -1,19 +1,139 @@
 <!DOCTYPE html>
 <html lang="sq">
 <head>
-  <meta charset="UTF-8">
-  <title>autoDNA Kosovë</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>autoDNA Kosovë</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background:#f6f8fb;
+}
+
+header{
+background:white;
+padding:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+}
+
+.logo span{
+color:#2563eb;
+}
+
+.hero{
+padding:80px 20px;
+text-align:center;
+}
+
+.hero h1{
+font-size:42px;
+margin-bottom:20px;
+}
+
+input{
+padding:14px;
+width:280px;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+button{
+padding:14px 20px;
+border:none;
+background:#2563eb;
+color:white;
+border-radius:8px;
+cursor:pointer;
+margin-left:10px;
+}
+
+.features{
+display:flex;
+justify-content:center;
+gap:30px;
+margin-top:40px;
+}
+
+.feature{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+footer{
+background:#111827;
+color:white;
+text-align:center;
+padding:30px;
+margin-top:80px;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<h1>autoDNA Kosovë</h1>
+<header>
 
-<p>Kontrollo historinë e veturës me VIN.</p>
+<div class="logo">
+auto<span>DNA</span> Kosovë
+</div>
 
-<input placeholder="Shkruaj VIN" />
-<button>Shiko raportin</button>
+</header>
+
+
+<section class="hero">
+
+<h1>Kontrollo historinë e veturës me VIN</h1>
+
+<p>Zbulo aksidentet, kilometrazhin dhe historinë e importit.</p>
+
+<br>
+
+<input placeholder="Shkruaj VIN">
+
+<button onclick="window.location.href='https://www.autodna.com/?utm_source=affiliate'">
+Shiko raportin
+</button>
+
+<div class="features">
+
+<div class="feature">
+🚗 Aksidentet
+</div>
+
+<div class="feature">
+📉 Kilometrazhi
+</div>
+
+<div class="feature">
+🌍 Historia e importit
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+autoDNA Kosovë © 2026
+
+</footer>
 
 </body>
 </html>
