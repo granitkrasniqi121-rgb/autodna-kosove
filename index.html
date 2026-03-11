@@ -1,227 +1,527 @@
 <!DOCTYPE html>
 <html lang="sq">
 <head>
-<meta name="google-site-verification" content="w1weIjhSzquPQ0i9oFE_HsMQzievI16M9kuwKIWYuxM" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>autoDNA Kosovë</title>
-
+<meta name="description" content="Kontrollo historinë e veturës me VIN para blerjes. Zbulo aksidentet, kilometrazhin dhe historinë e importit.">
 <style>
-
-body{
-margin:0;
-font-family:Arial, sans-serif;
-background:#f4f7fb;
-color:#0f172a;
-}
-
-header{
-background:white;
-padding:20px;
-border-bottom:1px solid #e5e7eb;
-}
-
-.logo{
-font-size:24px;
-font-weight:800;
-}
-
-.logo .auto{
-font-style:italic;
-color:#111827;
-}
-
-.logo .dna{
-color:#2563eb;
-}
-
-.hero{
-text-align:center;
-padding:80px 20px;
-max-width:900px;
-margin:auto;
-}
-
-h1{
-font-size:42px;
-margin-bottom:15px;
-}
-
-.hero p{
-color:#475569;
-font-size:18px;
-}
-
-.search{
-margin-top:30px;
-}
-
-input{
-padding:14px;
-width:280px;
-border-radius:10px;
-border:1px solid #cbd5e1;
-}
-
-button{
-padding:14px 20px;
-border:none;
-border-radius:10px;
-background:#2563eb;
-color:white;
-font-weight:bold;
-cursor:pointer;
-margin-left:10px;
-}
-
-button:hover{
-background:#1d4ed8;
-}
-
-.features{
-margin-top:40px;
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-}
-
-.feature{
-background:white;
-padding:15px 20px;
-border-radius:10px;
-border:1px solid #e5e7eb;
-}
-
-footer{
-margin-top:80px;
-background:#0f172a;
-color:white;
-text-align:center;
-padding:25px;
-}
-
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f5f7fb;
+    color:#0f172a;
+  }
+  a{text-decoration:none}
+  .topbar{
+    background:#0f172a;
+    color:#fff;
+    font-size:13px;
+    padding:8px 20px;
+  }
+  .topbar-wrap{
+    max-width:1180px;
+    margin:0 auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+  }
+  .topbar small{opacity:.85}
+  header{
+    background:#fff;
+    border-bottom:1px solid #e5e7eb;
+    position:sticky;
+    top:0;
+    z-index:10;
+  }
+  .header-wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:18px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+  }
+  .logo{
+    display:flex;
+    flex-direction:column;
+    line-height:1;
+  }
+  .logo-main{
+    font-size:30px;
+    font-weight:800;
+    letter-spacing:-0.5px;
+  }
+  .logo-main .auto{font-style:italic;color:#111827}
+  .logo-main .dna{color:#1d4ed8}
+  .logo-sub{
+    margin-top:3px;
+    font-size:11px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:#64748b;
+    font-weight:700;
+  }
+  nav{
+    display:flex;
+    gap:20px;
+    align-items:center;
+  }
+  nav a{
+    color:#475569;
+    font-size:14px;
+    font-weight:600;
+  }
+  nav a:hover{color:#0f172a}
+  .hero{
+    background:linear-gradient(180deg,#ffffff 0%,#eef4ff 100%);
+    border-bottom:1px solid #dbeafe;
+  }
+  .hero-wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:54px 20px 58px;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:38px;
+    align-items:center;
+  }
+  .badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:#eff6ff;
+    color:#1d4ed8;
+    border:1px solid #bfdbfe;
+    padding:8px 14px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:16px;
+  }
+  h1{
+    margin:0;
+    font-size:52px;
+    line-height:1.06;
+    letter-spacing:-1.4px;
+    max-width:700px;
+  }
+  .hero p{
+    font-size:18px;
+    line-height:1.75;
+    color:#475569;
+    margin:18px 0 0;
+    max-width:660px;
+  }
+  .trust-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:24px;
+  }
+  .trust-pill{
+    background:#fff;
+    border:1px solid #dbeafe;
+    color:#334155;
+    padding:10px 14px;
+    border-radius:14px;
+    font-size:13px;
+    font-weight:700;
+    box-shadow:0 6px 20px rgba(37,99,235,.06);
+  }
+  .search-card{
+    background:#fff;
+    border:1px solid #dbeafe;
+    border-radius:28px;
+    padding:22px;
+    box-shadow:0 24px 70px rgba(37,99,235,.12);
+  }
+  .search-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    margin-bottom:12px;
+  }
+  .search-head strong{font-size:16px}
+  .search-tag{
+    background:#eff6ff;
+    color:#1d4ed8;
+    padding:7px 12px;
+    border-radius:999px;
+    font-size:12px;
+    font-weight:700;
+    border:1px solid #bfdbfe;
+  }
+  .search-row{
+    display:flex;
+    gap:12px;
+  }
+  input{
+    flex:1;
+    padding:17px 18px;
+    border:1px solid #cbd5e1;
+    border-radius:18px;
+    font-size:16px;
+    background:#f8fafc;
+    outline:none;
+  }
+  input:focus{
+    border-color:#60a5fa;
+    background:#fff;
+  }
+  button{
+    border:none;
+    background:linear-gradient(180deg,#2563eb 0%,#1d4ed8 100%);
+    color:white;
+    padding:17px 22px;
+    border-radius:18px;
+    font-size:16px;
+    font-weight:800;
+    cursor:pointer;
+    box-shadow:0 12px 30px rgba(37,99,235,.28);
+  }
+  button:hover{filter:brightness(.97)}
+  .helper{
+    margin-top:10px;
+    font-size:13px;
+    color:#64748b;
+  }
+  .feature-row{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+    margin-top:18px;
+  }
+  .feature{
+    background:#f8fbff;
+    border:1px solid #dbeafe;
+    border-radius:18px;
+    padding:15px;
+  }
+  .feature small{
+    display:block;
+    color:#64748b;
+    margin-bottom:5px;
+  }
+  .feature strong{font-size:15px}
+  .report-card{
+    background:#fff;
+    border:1px solid #dbeafe;
+    border-radius:30px;
+    padding:24px;
+    box-shadow:0 28px 80px rgba(37,99,235,.14);
+  }
+  .report-header{
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    align-items:flex-start;
+    border-bottom:1px solid #e5e7eb;
+    padding-bottom:16px;
+  }
+  .report-kicker{
+    color:#64748b;
+    font-size:13px;
+    margin-bottom:8px;
+    font-weight:700;
+  }
+  .report-title{
+    font-size:31px;
+    font-weight:800;
+    letter-spacing:-.8px;
+    margin:0;
+  }
+  .status{
+    background:#dcfce7;
+    color:#166534;
+    border:1px solid #bbf7d0;
+    border-radius:999px;
+    padding:10px 14px;
+    font-size:13px;
+    font-weight:800;
+    white-space:nowrap;
+  }
+  .stats{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    margin-top:18px;
+  }
+  .stat{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:18px;
+    padding:14px 15px;
+  }
+  .stat small{
+    display:block;
+    color:#64748b;
+    margin-bottom:5px;
+    font-size:12px;
+    font-weight:700;
+  }
+  .stat strong{font-size:15px}
+  .warning{
+    margin-top:16px;
+    background:#fff7ed;
+    border:1px solid #fdba74;
+    color:#9a3412;
+    border-radius:20px;
+    padding:16px;
+    font-size:14px;
+    line-height:1.6;
+  }
+  .risk-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-top:16px;
+  }
+  .risk-box{
+    color:#fff;
+    border-radius:18px;
+    padding:15px;
+  }
+  .risk-box small{
+    display:block;
+    opacity:.8;
+    margin-bottom:6px;
+    text-transform:uppercase;
+    letter-spacing:.8px;
+    font-size:11px;
+    font-weight:700;
+  }
+  .risk-box strong{font-size:22px}
+  .dark{background:#0f172a}
+  .blue{background:#2563eb}
+  .green{background:#059669}
+  .section{
+    max-width:1180px;
+    margin:0 auto;
+    padding:56px 20px;
+  }
+  .section h2{
+    margin:0 0 12px;
+    font-size:36px;
+    letter-spacing:-.7px;
+  }
+  .section p.lead{
+    margin:0;
+    font-size:17px;
+    line-height:1.75;
+    color:#475569;
+    max-width:760px;
+  }
+  .guides{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-top:24px;
+  }
+  .guide{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:22px;
+    padding:22px;
+    box-shadow:0 8px 24px rgba(15,23,42,.04);
+  }
+  .guide h3{
+    margin:0 0 10px;
+    font-size:20px;
+  }
+  .guide p{
+    margin:0 0 14px;
+    color:#64748b;
+    line-height:1.65;
+    font-size:15px;
+  }
+  .guide a{
+    color:#2563eb;
+    font-weight:800;
+  }
+  footer{
+    background:#0f172a;
+    color:#fff;
+    margin-top:10px;
+  }
+  .footer-wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:26px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+  }
+  .footer-logo .auto{font-style:italic;color:#fff}
+  .footer-logo .dna{color:#60a5fa}
+  .footer-logo{font-size:24px;font-weight:800}
+  .footer-copy{font-size:14px;color:#cbd5e1}
+  @media (max-width:980px){
+    .hero-wrap{grid-template-columns:1fr}
+    .guides,.feature-row,.risk-grid{grid-template-columns:1fr}
+  }
+  @media (max-width:760px){
+    .topbar{display:none}
+    nav{display:none}
+    h1{font-size:38px}
+    .search-row,.footer-wrap,.report-header{flex-direction:column;align-items:stretch}
+    .stats,.guides{grid-template-columns:1fr}
+    .header-wrap{padding:16px 20px}
+  }
 </style>
-
 </head>
-  
-<meta name="google-site-verification" content="w1weIjhSzquPQ0i9oFE_HsMQzievI16M9kuwKIWYuxM" />
-  
 <body>
 
-<header>
-<div class="logo">
-<span class="auto">auto</span><span class="dna">DNA</span> Kosovë
+<div class="topbar">
+  <div class="topbar-wrap">
+    <small>Kontroll i historisë së veturës për tregun e Kosovës</small>
+    <small>VIN • Aksidente • Kilometrazh • Import</small>
+  </div>
 </div>
+
+<header>
+  <div class="header-wrap">
+    <a class="logo" href="index.html">
+      <span class="logo-main"><span class="auto">auto</span><span class="dna">DNA</span></span>
+      <span class="logo-sub">Kosovë</span>
+    </a>
+    <nav>
+      <a href="kontrollo-vin.html">Kontrollo VIN</a>
+      <a href="vin-check-kosove.html">VIN Check Kosovë</a>
+      <a href="kilometrazhi.html">Kilometrazhi</a>
+    </nav>
+  </div>
 </header>
 
 <section class="hero">
+  <div class="hero-wrap">
+    <div>
+      <div class="badge">Për vetura të importuara nga Evropa</div>
+      <h1>Kontrollo historinë e veturës me VIN para se ta blesh.</h1>
+      <p>Zbulo aksidentet, kilometrazhin e dyshimtë dhe historinë e importit. Dizajnuar për blerës në Kosovë që duan më shumë siguri para pagesës.</p>
 
-<h1>Kontrollo historinë e veturës me VIN</h1>
+      <div class="trust-row">
+        <div class="trust-pill">Kontroll i shpejtë</div>
+        <div class="trust-pill">Të dhëna të importit</div>
+        <div class="trust-pill">Raport më profesional</div>
+      </div>
 
-<p>Zbulo aksidentet, kilometrazhin dhe historinë e importit.</p>
+      <div class="search-card" style="margin-top:24px;">
+        <div class="search-head">
+          <strong>Shkruaj numrin VIN</strong>
+          <span class="search-tag">17 karaktere</span>
+        </div>
+        <div class="search-row">
+          <input id="vin" type="text" maxlength="17" placeholder="p.sh. WVWZZZ1KZAW000000">
+          <button onclick="go()">Shiko raportin</button>
+        </div>
+        <div class="helper">VIN-i do të dërgohet automatikisht te AutoDNA.</div>
 
-<div class="search">
+        <div class="feature-row">
+          <div class="feature">
+            <small>Kontrollo</small>
+            <strong>Aksidentet dhe dëmtimet</strong>
+          </div>
+          <div class="feature">
+            <small>Zbulo</small>
+            <strong>Kilometrazhin e dyshimtë</strong>
+          </div>
+          <div class="feature">
+            <small>Shih</small>
+            <strong>Historinë e importit</strong>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<input id="vin" placeholder="Shkruaj VIN">
+    <div class="report-card">
+      <div class="report-header">
+        <div>
+          <div class="report-kicker">Shembull raporti</div>
+          <h2 class="report-title">Shembull Raporti</h2>
+          <div class="helper" style="margin-top:8px;">Të dhëna të gjetura për këtë VIN</div>
+        </div>
+        <div class="status">Raport i disponueshëm</div>
+      </div>
 
-<button onclick="go()">Shiko raportin</button>
+      <div class="stats">
+        <div class="stat"><small>VIN</small><strong>WVWZZZ1KZAW000000</strong></div>
+        <div class="stat"><small>Viti</small><strong>2017</strong></div>
+        <div class="stat"><small>Karburanti</small><strong>Naftë</strong></div>
+        <div class="stat"><small>Origjina</small><strong>DE / CH</strong></div>
+      </div>
 
-</div>
+      <div class="warning">
+        Ky raport mund të përmbajë dëmtime të mëparshme, mospërputhje në kilometrazh, histori ankandi ose të dhëna të importit nga shtete të tjera.
+      </div>
 
-<div style="margin-top:40px;background:white;padding:25px;border-radius:12px;border:1px solid #e5e7eb">
+      <div class="risk-grid">
+        <div class="risk-box dark">
+          <small>Kontrolle</small>
+          <strong>12+</strong>
+        </div>
+        <div class="risk-box blue">
+          <small>Rrezik</small>
+          <strong>Mesatar</strong>
+        </div>
+        <div class="risk-box green">
+          <small>Origjina</small>
+          <strong>EU</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<h3>Shembull Raporti</h3>
+<section class="section">
+  <h2>Udhëzues të dobishëm</h2>
+  <p class="lead">Për ta bërë faqen më të ngjashme me një platformë reale automobilistike, kemi mbajtur një seksion të pastër me guida informative që lidhen me kontrollin e historisë së veturës.</p>
 
-<p style="color:#64748b">Të dhëna të gjetura për këtë VIN</p>
-
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:15px">
-
-<div><strong>VIN:</strong> WVWZZZ1KZAW000000</div>
-
-<div><strong>Viti:</strong> 2017</div>
-
-<div><strong>Karburanti:</strong> Naftë</div>
-
-<div><strong>Origjina:</strong> Gjermani</div>
-
-</div>
-
-<div style="margin-top:20px;background:#fff7ed;border:1px solid #fdba74;padding:15px;border-radius:10px">
-
-⚠ Ky raport mund të përmbajë:
-<ul>
-<li>Dëmtime të mëparshme</li>
-<li>Mospërputhje në kilometrazh</li>
-<li>Histori ankandi</li>
-</ul>
-
-</div>
-
-<br>
-
-<button onclick="go()" style="width:100%">
-Zhblloko raportin e plotë
-</button>
-
-</div>
-
-<div class="feature">🚗 Aksidentet</div>
-
-<div class="feature">📉 Kilometrazhi</div>
-
-<div class="feature">🌍 Historia e importit</div>
-
-</div>
-
+  <div class="guides">
+    <div class="guide">
+      <h3>Kontrollo veturën me VIN</h3>
+      <p>Shpjegon pse duhet bërë kontrolli i historisë para blerjes së një veture të përdorur.</p>
+      <a href="kontrollo-vin.html">Hape faqen</a>
+    </div>
+    <div class="guide">
+      <h3>VIN Check Kosovë</h3>
+      <p>Faqe e fokusuar në kërkimet për vetura të importuara dhe verifikim VIN në Kosovë.</p>
+      <a href="vin-check-kosove.html">Hape faqen</a>
+    </div>
+    <div class="guide">
+      <h3>Si ta kontrollosh kilometrazhin</h3>
+      <p>Përmbajtje informative për blerësit që duan të zbulojnë kilometrazhin e kthyer.</p>
+      <a href="kilometrazhi.html">Hape faqen</a>
+    </div>
+  </div>
 </section>
 
 <footer>
-
-autoDNA Kosovë © 2026
-
+  <div class="footer-wrap">
+    <div>
+      <div class="footer-logo"><span class="auto">auto</span><span class="dna">DNA</span> Kosovë</div>
+      <div class="footer-copy">Kontrollo historinë e veturës para blerjes</div>
+    </div>
+    <div class="footer-copy">© 2026 autoDNA Kosovë</div>
+  </div>
 </footer>
 
 <script>
-
 function go(){
-
-let vin=document.getElementById("vin").value.trim();
-
-if(!vin){
-alert("Ju lutem shkruani VIN.");
-return;
+  let vin=document.getElementById('vin').value.trim().toUpperCase();
+  if(!vin){
+    alert('Ju lutem shkruani VIN.');
+    return;
+  }
+  let url='https://www.autodna.com/?vin='+encodeURIComponent(vin)+'&utm_source=affiliate';
+  window.location.href=url;
 }
-
-let url="https://www.autodna.com/?vin="+encodeURIComponent(vin)+"&utm_source=affiliate";
-
-window.location.href=url;
-
-}
-
-</script>
-
-function go(){
-
-let vin=document.getElementById("vin").value;
-
-let url="https://www.autodna.com/?utm_source=affiliate";
-
-if(vin){
-url=url+"&vin="+vin;
-}
-
-window.location.href=url;
-
-}
-
 </script>
 
 </body>
 </html>
-
-
-
-
-
