@@ -9,76 +9,96 @@
 <style>
 
 body{
-font-family: Arial, sans-serif;
 margin:0;
-background:#f6f8fb;
+font-family:Arial, sans-serif;
+background:#f4f7fb;
+color:#0f172a;
 }
 
 header{
 background:white;
 padding:20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
+border-bottom:1px solid #e5e7eb;
 }
 
 .logo{
-font-size:28px;
-font-weight:bold;
+font-size:24px;
+font-weight:800;
 }
 
-.logo span{
+.logo .auto{
+font-style:italic;
+color:#111827;
+}
+
+.logo .dna{
 color:#2563eb;
 }
 
 .hero{
-padding:80px 20px;
 text-align:center;
+padding:80px 20px;
+max-width:900px;
+margin:auto;
 }
 
-.hero h1{
+h1{
 font-size:42px;
-margin-bottom:20px;
+margin-bottom:15px;
+}
+
+.hero p{
+color:#475569;
+font-size:18px;
+}
+
+.search{
+margin-top:30px;
 }
 
 input{
 padding:14px;
 width:280px;
-border-radius:8px;
-border:1px solid #ccc;
+border-radius:10px;
+border:1px solid #cbd5e1;
 }
 
 button{
 padding:14px 20px;
 border:none;
+border-radius:10px;
 background:#2563eb;
 color:white;
-border-radius:8px;
+font-weight:bold;
 cursor:pointer;
 margin-left:10px;
 }
 
+button:hover{
+background:#1d4ed8;
+}
+
 .features{
+margin-top:40px;
 display:flex;
 justify-content:center;
-gap:30px;
-margin-top:40px;
+gap:20px;
+flex-wrap:wrap;
 }
 
 .feature{
 background:white;
-padding:20px;
+padding:15px 20px;
 border-radius:10px;
-box-shadow:0 5px 20px rgba(0,0,0,0.05);
+border:1px solid #e5e7eb;
 }
 
 footer{
-background:#111827;
+margin-top:80px;
+background:#0f172a;
 color:white;
 text-align:center;
-padding:30px;
-margin-top:80px;
+padding:25px;
 }
 
 </style>
@@ -88,13 +108,10 @@ margin-top:80px;
 <body>
 
 <header>
-
 <div class="logo">
-auto<span>DNA</span> Kosovë
+<span class="auto">auto</span><span class="dna">DNA</span> Kosovë
 </div>
-
 </header>
-
 
 <section class="hero">
 
@@ -102,38 +119,49 @@ auto<span>DNA</span> Kosovë
 
 <p>Zbulo aksidentet, kilometrazhin dhe historinë e importit.</p>
 
-<br>
+<div class="search">
 
-<input placeholder="Shkruaj VIN">
+<input id="vin" placeholder="Shkruaj VIN">
 
-<button onclick="window.location.href='https://www.autodna.com/?utm_source=affiliate'">
-Shiko raportin
-</button>
+<button onclick="go()">Shiko raportin</button>
+
+</div>
 
 <div class="features">
 
-<div class="feature">
-🚗 Aksidentet
-</div>
+<div class="feature">🚗 Aksidentet</div>
 
-<div class="feature">
-📉 Kilometrazhi
-</div>
+<div class="feature">📉 Kilometrazhi</div>
 
-<div class="feature">
-🌍 Historia e importit
-</div>
+<div class="feature">🌍 Historia e importit</div>
 
 </div>
 
 </section>
-
 
 <footer>
 
 autoDNA Kosovë © 2026
 
 </footer>
+
+<script>
+
+function go(){
+
+let vin=document.getElementById("vin").value;
+
+let url="https://www.autodna.com/?utm_source=affiliate";
+
+if(vin){
+url=url+"&vin="+vin;
+}
+
+window.location.href=url;
+
+}
+
+</script>
 
 </body>
 </html>
