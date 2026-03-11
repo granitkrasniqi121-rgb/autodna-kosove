@@ -152,6 +152,23 @@ autoDNA Kosovë © 2026
 
 function go(){
 
+let vin=document.getElementById("vin").value.trim();
+
+if(!vin){
+alert("Ju lutem shkruani VIN.");
+return;
+}
+
+let url="https://www.autodna.com/?vin="+encodeURIComponent(vin)+"&utm_source=affiliate";
+
+window.location.href=url;
+
+}
+
+</script>
+
+function go(){
+
 let vin=document.getElementById("vin").value;
 
 let url="https://www.autodna.com/?utm_source=affiliate";
@@ -168,6 +185,7 @@ window.location.href=url;
 
 </body>
 </html>
+
 
 
 
