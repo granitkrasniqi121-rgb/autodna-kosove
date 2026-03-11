@@ -1,33 +1,111 @@
 <!DOCTYPE html>
 <html lang="sq">
 <head>
-<meta charset="UTF-8">
-<title>VIN Check Kosovë</title>
-<style>
-body{font-family:Arial;max-width:800px;margin:auto;padding:40px;background:#f8fafc}
-a{color:#2563eb}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VIN Check Kosovë | autoDNA Kosovë</title>
+  <meta name="description" content="VIN Check Kosovë për vetura të importuara. Kontrollo historinë e veturës para blerjes." />
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; background: #f5f7fb; color: #0f172a; }
+    a { text-decoration: none; }
+    .topbar { background: #0f172a; color: #fff; font-size: 13px; padding: 8px 20px; }
+    .topbar-wrap { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; gap: 20px; }
+    header { background: #fff; border-bottom: 1px solid #e5e7eb; }
+    .header-wrap { max-width: 1100px; margin: 0 auto; padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .logo { display: flex; flex-direction: column; line-height: 1; }
+    .logo-main { font-size: 30px; font-weight: 800; letter-spacing: -.5px; }
+    .logo-main .auto { font-style: italic; color: #111827; }
+    .logo-main .dna { color: #1d4ed8; }
+    .logo-sub { margin-top: 3px; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #64748b; font-weight: 700; }
+    nav { display: flex; gap: 20px; }
+    nav a { color: #475569; font-size: 14px; font-weight: 600; }
+    .hero { background: linear-gradient(180deg,#ffffff 0%,#eef4ff 100%); border-bottom: 1px solid #dbeafe; }
+    .hero-wrap { max-width: 1100px; margin: 0 auto; padding: 50px 20px; }
+    .badge { display: inline-block; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 700; margin-bottom: 16px; }
+    h1 { margin: 0 0 14px; font-size: 46px; line-height: 1.08; letter-spacing: -1px; }
+    .lead { font-size: 18px; line-height: 1.75; color: #475569; max-width: 760px; }
+    .content { max-width: 1100px; margin: 0 auto; padding: 50px 20px; }
+    .cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 22px; padding: 22px; box-shadow: 0 10px 30px rgba(15,23,42,.05); }
+    .card h2 { margin: 0 0 10px; font-size: 22px; }
+    .card p { margin: 0; color: #475569; line-height: 1.75; }
+    .cta-wrap { margin-top: 28px; }
+    .cta { display: inline-block; background: linear-gradient(180deg,#2563eb 0%,#1d4ed8 100%); color: #fff; padding: 14px 18px; border-radius: 14px; font-weight: 800; }
+    footer { background: #0f172a; color: #fff; margin-top: 20px; }
+    .footer-wrap { max-width: 1100px; margin: 0 auto; padding: 24px 20px; display: flex; justify-content: space-between; gap: 20px; align-items: center; }
+    .footer-logo { font-size: 24px; font-weight: 800; }
+    .footer-logo .auto { font-style: italic; color: #fff; }
+    .footer-logo .dna { color: #60a5fa; }
+    .footer-copy { font-size: 14px; color: #cbd5e1; }
+    @media (max-width: 900px) {
+      .cards { grid-template-columns: 1fr; }
+      nav { display: none; }
+      h1 { font-size: 36px; }
+      .topbar { display: none; }
+      .footer-wrap { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
 </head>
-
 <body>
+  <div class="topbar">
+    <div class="topbar-wrap">
+      <small>Kontroll i historisë së veturës për tregun e Kosovës</small>
+      <small>VIN • Aksidente • Kilometrazh • Import</small>
+    </div>
+  </div>
 
-<a href="index.html">← Kthehu në ballinë</a>
+  <header>
+    <div class="header-wrap">
+      <a class="logo" href="index.html">
+        <span class="logo-main"><span class="auto">auto</span><span class="dna">DNA</span></span>
+        <span class="logo-sub">Kosovë</span>
+      </a>
+      <nav>
+        <a href="index.html">Ballina</a>
+        <a href="kontrollo-vin.html">Kontrollo VIN</a>
+        <a href="kilometrazhi.html">Kilometrazhi</a>
+      </nav>
+    </div>
+  </header>
 
-<h1>VIN Check Kosovë</h1>
+  <section class="hero">
+    <div class="hero-wrap">
+      <div class="badge">VIN Check për Kosovë</div>
+      <h1>VIN Check Kosovë për vetura të importuara.</h1>
+      <p class="lead">Nëse po kërkon një mënyrë për të verifikuar historinë e veturës para blerjes, kjo faqe të ndihmon të kuptosh pse VIN check është një hap i rëndësishëm për çdo blerës në Kosovë.</p>
+    </div>
+  </section>
 
-<p>
+  <section class="content">
+    <div class="cards">
+      <div class="card">
+        <h2>Çfarë është VIN check?</h2>
+        <p>VIN check është kontrolli i historisë së veturës duke përdorur numrin unik të shasisë. Ky kontroll mund të tregojë informacione të dobishme për gjendjen dhe të kaluarën e veturës.</p>
+      </div>
+      <div class="card">
+        <h2>Pse ka rëndësi në Kosovë?</h2>
+        <p>Shumë vetura në Kosovë vijnë nga Gjermania, Zvicra, Austria apo shtete të tjera evropiane. Kjo e bën edhe më të rëndësishëm kontrollin e origjinës dhe historisë së tyre.</p>
+      </div>
+      <div class="card">
+        <h2>Çfarë mund të zbulohet?</h2>
+        <p>Aksidente, ankande, mospërputhje në kilometrazh, histori importi dhe të dhëna të tjera që mund të ndikojnë në vendimin për blerje.</p>
+      </div>
+    </div>
 
-Një VIN check mund të zbulojë historinë e vërtetë të veturës para blerjes.
+    <div class="cta-wrap">
+      <a class="cta" href="index.html">Shiko raportin nga ballina</a>
+    </div>
+  </section>
 
-</p>
-
-<p>
-
-Shumë vetura në Kosovë janë të importuara nga Evropa.
-
-</p>
-
-<a href="index.html">Kontrollo raportin</a>
-
+  <footer>
+    <div class="footer-wrap">
+      <div>
+        <div class="footer-logo"><span class="auto">auto</span><span class="dna">DNA</span> Kosovë</div>
+        <div class="footer-copy">Kontrollo historinë e veturës para blerjes</div>
+      </div>
+      <div class="footer-copy">© 2026 autoDNA Kosovë</div>
+    </div>
+  </footer>
 </body>
 </html>
