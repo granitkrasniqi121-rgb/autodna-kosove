@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <title>autoDNA Kosovë</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+<h1>autoDNA Kosovë</h1>
+
+<p>Kontrollo historinë e veturës me VIN.</p>
+
+<input placeholder="Shkruaj VIN" />
+<button>Shiko raportin</button>
+
+</body>
+</html>
