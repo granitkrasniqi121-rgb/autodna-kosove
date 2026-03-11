@@ -521,7 +521,40 @@ function go(){
   let url='https://www.autodna.com/?vin='+encodeURIComponent(vin)+'&utm_source=affiliate';
   window.location.href=url;
 }
+<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+const button = document.querySelector("button");
+const input = document.getElementById("vin");
+
+button.addEventListener("click", function(){
+
+let vin = input.value.trim().toUpperCase();
+
+if(!vin){
+alert("Ju lutem shkruani VIN.");
+return;
+}
+
+navigator.clipboard.writeText(vin).then(function(){
+
+alert("VIN u kopjua. AutoDNA do të hapet tani — ngjiteni VIN-in atje.");
+
+window.open("https://www.autodna.com/?utm_source=affiliate","_blank");
+
+}).catch(function(){
+
+window.open("https://www.autodna.com/?utm_source=affiliate","_blank");
+
+});
+
+});
+
+});
+
 </script>
 
 </body>
 </html>
+
