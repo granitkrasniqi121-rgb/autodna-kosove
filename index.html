@@ -418,7 +418,7 @@
         </div>
         <div class="search-row">
           <input id="vin" type="text" maxlength="17" placeholder="p.sh. WVWZZZ1KZAW000000">
-          <button onclick="go()">Shiko raportin</button>
+        <button id="checkBtn" type="button">Shiko raportin</button>
         </div>
         <div class="helper">VIN-i do të dërgohet automatikisht te AutoDNA.</div>
 
@@ -553,8 +553,36 @@ window.open("https://www.autodna.com/?utm_source=affiliate","_blank");
 
 });
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const button = document.getElementById("checkBtn");
+  const input = document.getElementById("vin");
+
+  button.onclick = async function () {
+
+    const vin = input.value.trim().toUpperCase();
+
+    if (!vin) {
+      alert("Ju lutem shkruani VIN.");
+      return;
+    }
+
+    try {
+      await navigator.clipboard.writeText(vin);
+      alert("VIN u kopjua. AutoDNA do të hapet tani — ngjiteni VIN-in atje.");
+    } catch (e) {
+      alert("Ju lutem kopjoni VIN manualisht.");
+    }
+
+    window.open("https://www.autodna.com/?utm_source=affiliate", "_blank");
+
+  };
+
+});
 </script>
 
 </body>
 </html>
+
 
