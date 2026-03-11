@@ -1,38 +1,116 @@
 <!DOCTYPE html>
 <html lang="sq">
 <head>
-<meta charset="UTF-8">
-<title>Kontrollo veturën me VIN</title>
-<style>
-body{font-family:Arial;max-width:800px;margin:auto;padding:40px;background:#f8fafc}
-a{color:#2563eb}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontrollo veturën me VIN | autoDNA Kosovë</title>
+  <meta name="description" content="Kontrollo veturën me VIN para blerjes. Zbulo aksidentet, kilometrazhin dhe historinë e importit." />
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; background: #f5f7fb; color: #0f172a; }
+    a { text-decoration: none; }
+    .topbar { background: #0f172a; color: #fff; font-size: 13px; padding: 8px 20px; }
+    .topbar-wrap { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; gap: 20px; }
+    header { background: #fff; border-bottom: 1px solid #e5e7eb; }
+    .header-wrap { max-width: 1100px; margin: 0 auto; padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .logo { display: flex; flex-direction: column; line-height: 1; }
+    .logo-main { font-size: 30px; font-weight: 800; letter-spacing: -.5px; }
+    .logo-main .auto { font-style: italic; color: #111827; }
+    .logo-main .dna { color: #1d4ed8; }
+    .logo-sub { margin-top: 3px; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #64748b; font-weight: 700; }
+    nav { display: flex; gap: 20px; }
+    nav a { color: #475569; font-size: 14px; font-weight: 600; }
+    .hero { background: linear-gradient(180deg,#ffffff 0%,#eef4ff 100%); border-bottom: 1px solid #dbeafe; }
+    .hero-wrap { max-width: 1100px; margin: 0 auto; padding: 50px 20px; }
+    .badge { display: inline-block; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 700; margin-bottom: 16px; }
+    h1 { margin: 0 0 14px; font-size: 46px; line-height: 1.08; letter-spacing: -1px; }
+    .lead { font-size: 18px; line-height: 1.75; color: #475569; max-width: 760px; }
+    .content { max-width: 1100px; margin: 0 auto; padding: 50px 20px; }
+    .grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 24px; }
+    .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 24px; padding: 24px; box-shadow: 0 10px 30px rgba(15,23,42,.05); }
+    .card h2 { margin: 0 0 14px; font-size: 28px; }
+    .card p { color: #475569; line-height: 1.75; }
+    .list { margin: 18px 0 0; padding-left: 18px; color: #334155; line-height: 1.8; }
+    .cta { margin-top: 20px; display: inline-block; background: linear-gradient(180deg,#2563eb 0%,#1d4ed8 100%); color: #fff; padding: 14px 18px; border-radius: 14px; font-weight: 800; }
+    .info-box { background: #f8fbff; border: 1px solid #dbeafe; border-radius: 20px; padding: 18px; margin-top: 16px; }
+    footer { background: #0f172a; color: #fff; margin-top: 20px; }
+    .footer-wrap { max-width: 1100px; margin: 0 auto; padding: 24px 20px; display: flex; justify-content: space-between; gap: 20px; align-items: center; }
+    .footer-logo { font-size: 24px; font-weight: 800; }
+    .footer-logo .auto { font-style: italic; color: #fff; }
+    .footer-logo .dna { color: #60a5fa; }
+    .footer-copy { font-size: 14px; color: #cbd5e1; }
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+      nav { display: none; }
+      h1 { font-size: 36px; }
+      .topbar { display: none; }
+      .footer-wrap { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
 </head>
-
 <body>
+  <div class="topbar">
+    <div class="topbar-wrap">
+      <small>Kontroll i historisë së veturës për tregun e Kosovës</small>
+      <small>VIN • Aksidente • Kilometrazh • Import</small>
+    </div>
+  </div>
 
-<a href="index.html">← Kthehu në ballinë</a>
+  <header>
+    <div class="header-wrap">
+      <a class="logo" href="index.html">
+        <span class="logo-main"><span class="auto">auto</span><span class="dna">DNA</span></span>
+        <span class="logo-sub">Kosovë</span>
+      </a>
+      <nav>
+        <a href="index.html">Ballina</a>
+        <a href="vin-check-kosove.html">VIN Check Kosovë</a>
+        <a href="kilometrazhi.html">Kilometrazhi</a>
+      </nav>
+    </div>
+  </header>
 
-<h1>Kontrollo veturën me VIN</h1>
+  <section class="hero">
+    <div class="hero-wrap">
+      <div class="badge">Udhëzues për blerësit e veturave</div>
+      <h1>Kontrollo veturën me VIN para se ta blesh.</h1>
+      <p class="lead">Një kontroll i historisë së veturës mund të të ndihmojë të zbulosh probleme që nuk duken në shikim të parë, si aksidente të mëparshme, kilometrazh të dyshimtë dhe histori importi.</p>
+    </div>
+  </section>
 
-<p>
-Para se të blesh një veturë të përdorur është shumë e rëndësishme
-të kontrollosh historinë e saj.
-</p>
+  <section class="content">
+    <div class="grid">
+      <div class="card">
+        <h2>Pse është i rëndësishëm kontrolli i VIN-it?</h2>
+        <p>Para se të blesh një veturë të përdorur, duhet të kuptosh sa më shumë për historinë e saj. Shumë vetura të importuara në Kosovë mund të kenë kaluar nëpër ankande, të kenë pasur dëmtime ose të kenë lexime të ndryshme të kilometrazhit.</p>
+        <p>Kontrolli i VIN-it është një nga hapat më të thjeshtë dhe më të zgjuar që mund të bëjë një blerës para pagesës.</p>
+        <ul class="list">
+          <li>Zbulon aksidente ose dëmtime të mëparshme</li>
+          <li>Tregon histori të mundshme importi</li>
+          <li>Ndihmon në verifikimin e kilometrazhit</li>
+          <li>Jep më shumë siguri para blerjes</li>
+        </ul>
+        <a class="cta" href="index.html">Kontrollo veturën tani</a>
+      </div>
 
-<ul>
+      <div class="card">
+        <h2>Çfarë mund të dalë në raport?</h2>
+        <div class="info-box">Aksidente ose riparime të mëparshme</div>
+        <div class="info-box">Mospërputhje në kilometrazh</div>
+        <div class="info-box">Histori e importit nga shtete të tjera</div>
+        <div class="info-box">Të dhëna nga ankande ose regjistrime të mëparshme</div>
+      </div>
+    </div>
+  </section>
 
-<li>aksidentet</li>
-<li>kilometrazhi</li>
-<li>historia e importit</li>
-
-</ul>
-
-<p>
-
-<a href="index.html">Kontrollo veturën tani</a>
-
-</p>
-
+  <footer>
+    <div class="footer-wrap">
+      <div>
+        <div class="footer-logo"><span class="auto">auto</span><span class="dna">DNA</span> Kosovë</div>
+        <div class="footer-copy">Kontrollo historinë e veturës para blerjes</div>
+      </div>
+      <div class="footer-copy">© 2026 autoDNA Kosovë</div>
+    </div>
+  </footer>
 </body>
 </html>
